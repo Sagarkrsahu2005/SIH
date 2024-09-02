@@ -1,3 +1,7 @@
+Here’s the updated README file:
+
+---
+
 # Bhārat Legacy - Showcasing India's Rich Cultural Heritage
 
 [![SIH](https://img.shields.io/badge/Smart%20India%20Hackathon-2024-green.svg)](https://www.sih.gov.in/)
@@ -76,11 +80,9 @@ The goal of this project is to create innovative solutions that showcase the ric
    http://localhost:3000
    ```
 
-## Usage
+## Live Demo
 
-- **Festival Calendar:** Explore various Indian festivals, learn about their origins, and discover how they are celebrated across different regions.
-- **Handcrafted Shop:** Browse and purchase traditional crafts, supporting local artisans and preserving ancient techniques.
-- **Educational Content:** Access a wide range of articles, videos, and interactive content to learn more about India's cultural heritage.
+Check out the live version of the project here: [Bhārat Legacy - Live Demo](https://sagarkrsahu2005.github.io/SIH/)
 
 ## License
 
@@ -93,5 +95,3 @@ For any queries, please contact:
 - **Sagar Sahu**
 - Email: [sagar@example.com](mailto:sagar@example.com)
 - GitHub: [Sagarkrsahu2005](https://github.com/Sagarkrsahu2005)
-
---
