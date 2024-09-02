@@ -1,6 +1,6 @@
 @font-face {
     font-family: PP mori;
-    src: url(./ppmori.ttf);
+    src: url(./ppmori-regular.woff2);
 }
 
 * {
@@ -29,6 +29,9 @@ html, body {
     background-clip: text;
     text-fill-color: transparent;
 }
+
+
+
 
 .background-gradient {
     background: linear-gradient(135deg, #E57373, #F06292, #BA68C8, #64B5F6, #4DB6AC);
@@ -77,7 +80,7 @@ html, body {
     mix-blend-mode: difference;
 }
 .main{
-    background-color: #0F0D0D;
+    background-color: #021424;
     cursor: none;
 }
 
@@ -90,42 +93,77 @@ html, body {
 }
 
 
-#nav{
+#nav {
     height: 55px;
     width: 100%;
-    /* background-color: red; */
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0 30px;
     position: fixed;
     mix-blend-mode: difference;
-    z-index:102;
+    z-index: 102;
 }
-#nav img{
+
+#nav img {
     height: 27px;
 }
-#nav-part2{
+
+#nav-part2 {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 20px;
 }
 
-#nav #circle{
+#nav #circle {
     height: 18px;
     width: 18px;
     border-radius: 50%;
     background-color: #fff;
 }
-#nav h4{
+
+#nav h4 {
     font-size: 16px;
     font-weight: 500;
     text-transform: uppercase;
+    position: relative;
+    transition: color 0.3s ease;
 }
-#nav h4:nth-child(1){
-    border-bottom: 1.5px solid #fff;
+
+#nav a {
+    position: relative;
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s ease;
 }
+
+#nav a::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background-color: white;
+    visibility: hidden;
+    transition: all 0.3s ease-in-out;
+}
+
+#nav a:hover::before {
+    visibility: visible;
+    width: 100%;
+}
+
+#nav a:hover {
+    color: #ff9933; /* Change to the desired hover color */
+}
+
+#nav a:active {
+    transform: scale(0.95);
+    transition: transform 0.2s ease;
+}
+
 
 .page1 h1{
     font-size: 8vw;
@@ -206,34 +244,106 @@ html, body {
     color: #1B1B1B;
     margin-top: 20px;
 }
-.page3 h1{
+
+
+/* .page3 h1 {
     font-size: 6.8vw;
     font-weight: 300;
     color: #111;
     margin-left: 100px;
 }
+
+.page3 {
+    padding: 20px;
+} */
+
+.page3 h1 {
+    font-size: 6.8vw;
+    font-weight: 300;
+    color: #111;
+    margin-left: 100px;
+}
+
 .page3-part1 {
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
-    gap: 20px; /* Add space between images */
+    gap: 20px; /* Add space between image containers */
 }
 
-.page3-part1 img {
-    height: 400px;
+.image-container {
+    text-align: center;
+    position: relative; /* Needed for the text color change effect */
+}
+
+.image-container img {
+    height: 400px; /* Default height for images */
     margin-top: 160px;
     transition: transform 0.3s ease-in-out; /* For hover effect */
 }
 
-.page3-part1 .img-2 {
-    height: 700px;
+.image-container .img-2 {
+    margin-left: 16.5vw;
+    height: 700px; /* Specific height for second image */
     margin-top: 300px;
 }
 
 /* Hover effect */
-.page3-part1 img:hover {
+.image-container img:hover {
     transform: scale(1.05); /* Slight zoom on hover */
 }
+
+.image-container h2,
+.image-container p {
+    transition: color 0.8s ease-in-out, opacity 0.8s ease-in-out; /* Smooth transition for color and opacity */
+    opacity: 0; /* Start with hidden text */
+}
+
+.image-container:hover h2,
+.image-container:hover p {
+    background: linear-gradient(to right, #FF9A9E, #FAD0C4, #FDCB82, #E2D1C3);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+    opacity: 1; /* Make text visible on hover */
+}
+
+.image-container h2 {
+    font-size: 3vw;
+    color: #100D0D;
+    padding-top: 20px;
+    text-align: left;
+    padding-left: 2vw;
+    font-weight: 700; /* Smooth transition for text color */
+}
+
+.image-container p {
+    font-size: 2rem;
+    color: #100D0D; /* Dark color for the paragraph text */
+    line-height: 1.5;
+    margin: 0;
+    text-align: left;
+    padding-left: 2vw;
+}
+
+/* Optional specific styles for .h2 and .p2 if needed */
+.image-container .h2 {
+    /* color: #00ffe5; */
+    margin-left: 15vw;
+    padding-top: 20px;
+    text-align: right;
+    padding-right: 2vw;
+    font-weight: 700;
+}
+
+.image-container .p2 {
+    /* color: #00ffe5; */
+    padding-right: 2vw;
+    text-align: right;
+}
+
+
 
 /* Responsive Adjustments */
 @media (max-width: 768px) {
