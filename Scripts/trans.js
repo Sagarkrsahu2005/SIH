@@ -108,15 +108,59 @@ boxes.forEach(function(elem){
     })
 })
 
-// var h4 = document.querySelectorAll("#nav h4")
-// var purple = document.querySelector("#purple")
-// h4.forEach(function(elem){
-//     elem.addEventListener("mouseenter",function(){
-//         purple.style.display = "block"   
-//         purple.style.opacity = "1"
-//     })
-//     elem.addEventListener("mouseleave",function(){
-//         purple.style.display = "none"   
-//         purple.style.opacity = "0"
-//     })
-// })
+var h4 = document.querySelectorAll("#nav h4")
+var purple = document.querySelector("#purple")
+h4.forEach(function(elem){
+    elem.addEventListener("mouseenter",function(){
+        purple.style.display = "block"   
+        purple.style.opacity = "1"
+    })
+    elem.addEventListener("mouseleave",function(){
+        purple.style.display = "none"   
+        purple.style.opacity = "0"
+    })
+})
+
+
+
+const inputText = document.getElementById('inputText');
+const outputText = document.getElementById('outputText');
+const inputLanguage = document.getElementById('inputLanguage');
+const outputLanguage = document.getElementById('outputLanguage');
+const swapLanguages = document.getElementById('swapLanguages');
+
+inputText.addEventListener('input', translateText);
+inputLanguage.addEventListener('change', translateText);
+outputLanguage.addEventListener('change', translateText);
+swapLanguages.addEventListener('click', swapLang);
+
+function translateText() {
+    const text = inputText.value;
+    const inputLang = inputLanguage.value;
+    const outputLang = outputLanguage.value;
+
+    if (text.trim() === '') {
+        outputText.value = '';
+        return;
+    }
+
+    const url = `https://translate.googleapis.com/translate_a/single?client=gtx&sl=${inputLang}&tl=${outputLang}&dt=t&q=${encodeURIComponent(text)}`;
+
+    fetch(url)
+        .then(response => response.json())
+        .then(data => {
+            const translation = data[0][0][0];
+            outputText.value = translation;
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            outputText.value = 'Translation error...';
+        });
+}
+
+function swapLang() {
+    const tempLang = inputLanguage.value;
+    inputLanguage.value = outputLanguage.value;
+    outputLanguage.value = tempLang;
+    translateText();
+}

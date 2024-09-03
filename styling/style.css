@@ -46,6 +46,9 @@ html, body {
     /* margin-bottom: 40px; */
 }
 
+
+
+
 .kalam-bold {
     font-family: "Kalam", cursive;
     font-weight: 700;
@@ -81,6 +84,9 @@ html, body {
 }
 .main{
     background-color: #021424;
+    /* background-color: #97908d; */
+    /* background: url('https://images.unsplash.com/photo-1622798023168-76a8f3b1f24e?q=80&w=2832&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat center center/cover; */
+    /* opacity: -2; */
     cursor: none;
 }
 
@@ -280,6 +286,7 @@ html, body {
     height: 400px; /* Default height for images */
     margin-top: 160px;
     transition: transform 0.3s ease-in-out; /* For hover effect */
+    margin-left: 1vw;
 }
 
 .image-container .img-2 {
