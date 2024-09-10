@@ -93,5 +93,5 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 For any queries, please contact:
 
 - **Sagar Sahu**
-- Email: [sagar@example.com](mailto:sagar@example.com)
+- Email: [sagarcoding2005@gmail.com](mailto:sagarcoding2005@gmail.com)
 - GitHub: [Sagarkrsahu2005](https://github.com/Sagarkrsahu2005)
