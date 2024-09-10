@@ -1,0 +1,449 @@
+@font-face {
+    font-family: 'PP mori';
+    src: url(./ppmori.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'PP mori', sans-serif;
+    color: #fff;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+body {
+    background-color: #021424;
+}
+
+.text-gradient {
+    background: linear-gradient(to right, #FF9933, #138808);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+}
+
+.text-gradient2 {
+    background: linear-gradient(to right, #FF9933, #FFB84D, #FFFFFF, #138808);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+}
+
+.background-gradient {
+    background: linear-gradient(135deg, #E57373, #F06292, #BA68C8, #64B5F6, #4DB6AC);
+    padding: 10px;
+    border-radius: 50px;
+    text-align: center;
+    max-width: 500px;
+    margin: 0 auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    font-size: 3vw;
+    color: #333;
+}
+
+
+
+.background-gradient2 {
+    background: linear-gradient(135deg, #B22222, #FFB300, #003366);
+    padding: 10px;
+    border-radius: 50px;
+    text-align: center;
+    max-width: 500px;
+    margin: 0 auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    font-size: 3vw;
+    transition: transform 0.5s ease-in-out, background-position 1s ease-in-out; /* Smooth transition on hover */
+    background-size: 200% 200%;
+    background-position: 0% 50%;
+    /* padding-bottom: 40px; */
+}
+
+.background-gradient2:hover {
+    transform: scale(1.05); /* Slightly enlarge on hover */
+    background-position: 100% 50%; /* Smoothly transition the gradient */
+}
+
+.kalam-bold {
+    font-family: 'Kalam', cursive;
+    font-weight: 700;
+}
+
+#purple {
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+    position: fixed;
+    z-index: 100;
+    background-color: #EDBFFF;
+    opacity: 0;
+    display: none;
+    transition: opacity 1s ease;
+}
+
+.cursor {
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    position: fixed;
+    background: linear-gradient(135deg, #FF9933, #FFB84D 25%, #FFFFFF 40%, #128807 75%, #000080);
+    z-index: 8;
+    transition: background-image 0.5s ease, width 0.3s ease, height 0.3s ease, border-radius 0.3s ease;
+    background-position: center;
+    background-size: cover;
+    mix-blend-mode: difference;
+}
+
+.main {
+    background-color: #021424;
+    cursor: none;
+}
+
+.page1 {
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+    z-index: 9;
+    padding-top: 12vw;
+}
+
+#nav {
+    height: 55px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 30px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 102;
+}
+
+#nav img {
+    height: 27px;
+}
+
+#nav-part2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+#nav #circle {
+    height: 18px;
+    width: 18px;
+    border-radius: 50%;
+    background-color: #fff;
+}
+
+#nav h4 {
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: uppercase;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+#nav a {
+    position: relative;
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s ease;
+}
+
+#nav a::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background-color: white;
+    visibility: hidden;
+    transition: all 0.3s ease-in-out;
+}
+
+#nav a:hover::before {
+    visibility: visible;
+    width: 100%;
+}
+
+#nav a:hover {
+    color: #ff9933;
+}
+
+#nav a:active {
+    transform: scale(0.95);
+    transition: transform 0.2s ease;
+}
+
+.hero {
+    background: linear-gradient(to right, #FF9933, #138808), url('https://via.placeholder.com/1200x600') no-repeat center center/cover;
+    color: white;
+    text-align: center;
+    padding: 60px 20px;
+    position: relative;
+    padding-top: 55px;
+    min-height: 10vh;
+    background-color: #021424;
+    z-index: 1;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    font-weight: 400;
+    /* color: black; */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+.container {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 20px;
+}
+.header {
+    position: relative;
+    padding: 20px;
+    text-align: center;
+}
+
+.header h1 {
+    font-size: 4.5rem; /* Increased size */
+    margin-bottom: 10px;
+    line-height: 1;
+    margin-top: 30px;
+    background: linear-gradient(to right, #FFD699, #99CC99); /* Light gradient colors */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Lighter shadow */
+}
+
+
+
+.image-gallery {
+    display: flex;
+    flex: 3;
+}
+.image-gallery img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    margin: 0 10px;
+}
+.title-section {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 20px;
+}
+
+.explore-btn {
+    background-color: #FF9933;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px; /* Adds space between h1 and the button */
+}
+
+.explore-btn:hover {
+    background-color: #FFB84D;
+}
+
+.explore-btn:active {
+    transform: scale(0.98); /* Adds a slight shrink effect when clicked */
+    background-color: #FFB84D;
+}
+
+.cta-button {
+    background-color: #FF9933;
+    color: #fff;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.2rem;
+}
+
+.cta-button:hover {
+    background-color: #FFB84D;
+}
+
+
+
+h1 {
+    margin: 0;
+    font-size: 24px;
+}
+.meta {
+    font-size: 14px;
+    margin-top: 10px;
+}
+.content {
+    background-color: white;
+    padding: 20px;
+    margin-top: 20px;
+}
+h2 {
+    color: #333;
+    /* font-weight: 800; */
+}
+p {
+    line-height: 2;
+    color: #333;
+
+}
+
+.cont-img {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.cont-img {
+    position: relative;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.explore-btn-fixed {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #FF9933; /* Use the color from the Indian flag gradient */
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000; /* Ensure the button is on top */
+}
+
+.explore-btn-fixed:hover {
+    background-color: #138808; /* Darker shade for hover effect */
+}
+
+
+.cont-img {
+    position: relative; /* Make it the reference point for absolute positioning */
+}
+
+.shop-btn {
+    position: absolute;
+    bottom: 20px; /* Adjust as needed */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #FF9933; /* Use a gradient color or your preferred color */
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000; /* Ensure the button is on top */
+    margin-left: 29vw;
+}
+
+.shop-btn:hover {
+    background-color: #138808; /* Darker shade for hover effect */
+}
+
+footer {
+    background: linear-gradient(to right, #FF9933, #FFFFFF, #138808, #000080);
+    color: white;
+    padding: 4rem 2rem;
+    position: relative;
+    min-height: 100vh;
+    clear: both;
+    width: 100%;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.footer-content .section {
+    flex: 1;
+}
+
+.map-container {
+    position: relative;
+    width: 100%;
+    height: 300px;
+}
+
+.map-hover-info {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: 12px;
+    padding: 20px;
+}
+
+.map-container:hover .map-hover-info {
+    opacity: 1;
+}
+
+form input,
+form button {
+    width: 100%;
+}
+
+form button {
+    max-width: 150px;
+}
+
+@media (max-width: 768px) {
+    .map-container {
+        height: 200px;
+    }
+}

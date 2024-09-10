@@ -1,0 +1,403 @@
+@font-face {
+    font-family: 'PP Mori';
+    src: url('./ppmori.ttf') format('truetype');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'PP Mori', sans-serif;
+    color: #fff;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+body {
+    background-color: #021424;
+    font-family: 'PP Mori', sans-serif; /* Ensuring PP Mori is used */
+}
+
+.text-gradient {
+    background: linear-gradient(to right, #FF9933, #138808);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+}
+
+.text-gradient2 {
+    background: linear-gradient(to right, #FF9933, #FFB84D, #FFFFFF, #138808);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+}
+
+.background-gradient {
+    background: linear-gradient(135deg, #E57373, #F06292, #BA68C8, #64B5F6, #4DB6AC);
+    padding: 10px;
+    border-radius: 50px;
+    text-align: center;
+    max-width: 500px;
+    margin: 0 auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    font-size: 3vw;
+    color: #333;
+}
+
+.background-gradient2 {
+    background: linear-gradient(135deg, #B22222, #FFB300, #003366);
+    padding: 10px;
+    border-radius: 50px;
+    text-align: center;
+    max-width: 500px;
+    margin: 0 auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    font-size: 3vw;
+    transition: transform 0.5s ease-in-out, background-position 1s ease-in-out; /* Smooth transition on hover */
+    background-size: 200% 200%;
+    background-position: 0% 50%;
+}
+
+.background-gradient2:hover {
+    transform: scale(1.05); /* Slightly enlarge on hover */
+    background-position: 100% 50%; /* Smoothly transition the gradient */
+}
+
+.kalam-bold {
+    font-family: 'Kalam', cursive;
+    font-weight: 700;
+}
+
+#purple {
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+    position: fixed;
+    z-index: 100;
+    background-color: #EDBFFF;
+    opacity: 0;
+    display: none;
+    transition: opacity 1s ease;
+}
+
+.cursor {
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    position: fixed;
+    background: linear-gradient(135deg, #FF9933, #FFB84D 25%, #FFFFFF 40%, #128807 75%, #000080);
+    z-index: 8;
+    transition: background-image 0.5s ease, width 0.3s ease, height 0.3s ease, border-radius 0.3s ease;
+    background-position: center;
+    background-size: cover;
+    mix-blend-mode: difference;
+}
+
+.main {
+    background-color: #021424;
+    cursor: none;
+}
+
+.page1 {
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+    z-index: 9;
+    padding-top: 12vw;
+}
+
+#nav {
+    height: 55px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 30px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 102;
+}
+
+#nav img {
+    height: 27px;
+}
+
+#nav-part2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+#nav #circle {
+    height: 18px;
+    width: 18px;
+    border-radius: 50%;
+    background-color: #fff;
+}
+
+#nav h4 {
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: uppercase;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+#nav a {
+    position: relative;
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s ease;
+}
+
+#nav a::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background-color: white;
+    visibility: hidden;
+    transition: all 0.3s ease-in-out;
+}
+
+#nav a:hover::before {
+    visibility: visible;
+    width: 100%;
+}
+
+#nav a:hover {
+    color: #ff9933;
+}
+
+#nav a:active {
+    transform: scale(0.95);
+    transition: transform 0.2s ease;
+}
+
+.hero {
+    background: linear-gradient(to right, #FF9933, #138808), url('https://via.placeholder.com/1200x600') no-repeat center center/cover;
+    color: white;
+    text-align: center;
+    padding: 60px 20px;
+    position: relative;
+    padding-top: 55px;
+    min-height: 10vh;
+    background-color: #021424;
+    z-index: 1;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+/* Calendar Styles */
+.calendar {
+    max-width: 1000px;
+    margin: 40px auto;
+    background-color: #051e31;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: linear-gradient(to right, #FF9933, #FFB84D, #FFFFFF, #138808);
+    border-radius: 12px;
+}
+
+.calendar-header h1 {
+    font-size: 2.5rem;
+    color: #0000;
+    text-transform: uppercase;
+}
+
+.calendar-header button {
+    background-color: #FF9933;
+    color: #0000;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.calendar-header button:hover {
+    background-color: #FFB84D;
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.calendar-day {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    text-align: center;
+    border-radius: 12px;
+    transition: background-color 0.3s ease;
+}
+
+.calendar-day:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.calendar-day span {
+    display: block;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.current-day {
+    background-color: #FF9933;
+}
+
+.calendar-day.disabled {
+    color: rgba(255, 255, 255, 0.3);
+}
+
+footer {
+    background: linear-gradient(to right, #FF9933, #FFFFFF, #138808, #000080);
+    color: white;
+    padding: 4rem 2rem;
+    position: relative;
+    min-height: 100vh;
+    clear: both;
+    width: 100%;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.footer-content .section {
+    flex: 1;
+}
+
+.map-container {
+    position: relative;
+    width: 100%;
+    height: 300px;
+}
+
+.map-hover-info {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: 12px;
+    padding: 20px;
+}
+
+.map-container:hover .map-hover-info {
+    opacity: 1;
+}
+
+.footer-logo img {
+    width: 100px;
+}
+
+.footer-content h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.footer-content p {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.footer-content .social-icons {
+    display: flex;
+    gap: 1rem;
+}
+
+.footer-content .social-icons a {
+    color: white;
+    font-size: 1.5rem;
+}
+
+.footer-content .social-icons a:hover {
+    color: #FF9933;
+}
+
+.newsletter {
+    background: linear-gradient(45deg, #FF9933, #FFB84D);
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+}
+
+.newsletter input {
+    border: none;
+    padding: 10px;
+    width: 70%;
+    border-radius: 8px;
+    margin-right: 10px;
+}
+
+.newsletter button {
+    background-color: #FF9933;
+    color: #000;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.newsletter button:hover {
+    background-color: #FFB84D;
+}
+
+#footer-social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+#footer-social-icons a {
+    color: white;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+#footer-social-icons a:hover {
+    color: #FF9933;
+}

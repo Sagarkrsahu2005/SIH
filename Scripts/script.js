@@ -120,3 +120,63 @@ boxes.forEach(function(elem){
 //         purple.style.opacity = "0"
 //     })
 // })
+
+
+
+
+// Ensure DOM is fully loaded before executing the script
+document.addEventListener('DOMContentLoaded', () => {
+    const chatbotToggle = document.getElementById('chatbot-toggle');
+    const chatbotContainer = document.getElementById('chatbot-container');
+    const chatbotClose = document.getElementById('chatbot-close');
+    const chatbotInput = document.getElementById('chatbot-input');
+    const chatbotMessages = document.getElementById('chatbot-messages');
+    const chatbotSend = document.getElementById('chatbot-send');
+
+    // Import the auto bot response functionality
+    import('./autoBotResponse.js').then(module => {
+        const { handleBotResponse } = module;
+
+        // Toggle chatbot visibility
+        chatbotToggle.addEventListener('click', () => {
+            chatbotContainer.style.display = 'flex';
+            chatbotToggle.style.display = 'none';
+        });
+
+        chatbotClose.addEventListener('click', () => {
+            chatbotContainer.style.display = 'none';
+            chatbotToggle.style.display = 'block';
+        });
+
+        // Send message functionality
+        chatbotSend.addEventListener('click', () => {
+            sendMessage();
+        });
+
+        chatbotInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                sendMessage();
+            }
+        });
+
+        function sendMessage() {
+            const messageText = chatbotInput.value.trim();
+            if (messageText === '') return;
+
+            // Create user message
+            const userMessage = document.createElement('div');
+            userMessage.classList.add('message', 'user');
+            userMessage.innerText = messageText;
+            chatbotMessages.appendChild(userMessage);
+
+            // Scroll to bottom
+            chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+
+            // Handle bot response
+            handleBotResponse(chatbotMessages, messageText);
+
+            // Clear input field
+            chatbotInput.value = '';
+        }
+    });
+});
